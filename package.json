@@ -2,8 +2,9 @@
   "name": "ll_til",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
+    "dev": "nodemon server/server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
