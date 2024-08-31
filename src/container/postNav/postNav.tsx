@@ -12,7 +12,7 @@ export default function PostNav({
     console.log(track);
   }
   return (
-    <div className="flex flex-col box-border p-5 min-h-full border-r-2 border-r-orange-300">
+    <div className="flex flex-col box-border p-5 border-none min-h-0 sm:min-h-screen flex-row border-r-2 border-r-orange-300">
       <ul className="flex flex-col font-bold text-l">
         <div
           className="hover:cursor-pointer"
@@ -26,12 +26,15 @@ export default function PostNav({
         >
           📗 Backend
         </div>
-        <div className="hover:cursor-pointer" onClick={() => changeTrack('cs')}>
+        <div
+          className="hover:cursor-pointer"
+          onClick={() => changeTrack('computer science')}
+        >
           📘 Computer Science
         </div>
         <div
           className="hover:cursor-pointer"
-          onClick={() => changeTrack('algo')}
+          onClick={() => changeTrack('algorithm')}
         >
           📒 Algorithm
         </div>

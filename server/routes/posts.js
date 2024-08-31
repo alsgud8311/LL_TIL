@@ -9,7 +9,6 @@ const router = express.Router();
 router.post('/', async (req, res) => {
   const { track } = req.body;
   let data = await transaction(post.getPosts, [track]);
-  console.log(data);
   const sendingData = JSON.stringify({
     data: data[0],
   });

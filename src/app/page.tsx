@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex w-full h-screen items-center">
+      <main className="flex justify-start text-start h-screen flex-col items-center sm:flex-row">
         <PostNav setTrack={setTrack} />
         <Posts track={track} />
       </main>
