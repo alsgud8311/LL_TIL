@@ -4,7 +4,7 @@ const { fileURLToPath } = require('url');
 const { dirname, join } = require('path');
 const next = require('next');
 const { parse } = require('url');
-
+const postRouter = require('./routes/posts.js');
 dotenv.config({ path: '.env' });
 
 /** Create Express */
@@ -26,17 +26,13 @@ nextApp.prepare().then(() => {
   app.use(express.urlencoded({ extended: true }));
   /** static 경로 설정 */
   app.use(express.static(join(__dirname, 'src')));
-
-  /** Express Router Settings */
-  app.use('/api', (req, res, next) => {
-    res.send('hello!');
-  });
+  app.use('/api/post', postRouter);
 
   /** Next.js Routing */
   app.get('/', (req, res) => {
     const parsedUrl = parse(req.url, true);
     const { pathname, query } = parsedUrl;
-    nextApp.render(req, res, pathname, query);
+    handle(req, res, parsedUrl);
   });
 
   app.get('*', (req, res) => {

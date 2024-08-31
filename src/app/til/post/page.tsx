@@ -9,7 +9,7 @@ export default function Til() {
   const [posting, setPosting] = useState<string>('#학습한 것들을 공유해보세요');
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col h-screen">
       <PostHeader />
       <Posting posting={posting} setPosting={setPosting} />
     </main>

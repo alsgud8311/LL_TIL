@@ -4,6 +4,7 @@ import React from 'react';
 
 import '@uiw/react-md-editor/markdown-editor.css';
 import '@uiw/react-markdown-preview/markdown.css';
+import './editor.css';
 
 import MDEditor from '@uiw/react-md-editor';
 
@@ -22,8 +23,8 @@ export default function Posting({
   }
 
   return (
-    <div>
-      <MDEditor value={posting} onChange={onChangePosting} />
+    <div className="h-full">
+      <MDEditor value={posting} onChange={onChangePosting} height={800} />
     </div>
   );
 }

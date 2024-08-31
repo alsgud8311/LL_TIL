@@ -29,3 +29,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.custom-editor {
+  height: 100%;
+}
