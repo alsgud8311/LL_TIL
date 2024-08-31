@@ -11,13 +11,17 @@ function PostRepository() {
 
   async function addPost(connection, postInfo) {
     try {
-      const query = `insert into posts(author, passwd, detail, track)`;
+      const query = `insert into posts(author, passwd, detail, track) values(?, ?, ?, ?)`;
       const result = await connection.query(query, postInfo);
       return result;
     } catch (error) {
       console.error(`mysql db error: ${error}`);
     }
   }
+  return {
+    getPosts,
+    addPost,
+  };
 }
 
 module.exports = PostRepository();

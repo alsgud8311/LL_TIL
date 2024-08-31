@@ -20,7 +20,7 @@ const getConnection = async () => {
   }
 };
 
-export const transaction = async (logic, query) => {
+const transaction = async (logic, query) => {
   const connection = await getConnection();
   try {
     await connection.beginTransaction();
@@ -36,3 +36,5 @@ export const transaction = async (logic, query) => {
     connection.release();
   }
 };
+
+module.exports = { transaction };
